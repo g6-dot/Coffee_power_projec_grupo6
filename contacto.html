@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Power of Coffee</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-grid { display:grid; gap:1.5rem; grid-template-columns: 1fr; }
+    @media(min-width:768px){ .contact-grid{ grid-template-columns: repeat(2,1fr); } }
+    .contact-card { background:white; padding:1.25rem; border-radius:0.5rem; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+    .contact-list { list-style:none; padding:0; }
+    .contact-list li { margin-bottom:0.5rem; }
+    .map-placeholder { background:#f3f4f6; height:200px; border-radius:0.5rem; display:flex; align-items:center; justify-content:center; color:#9ca3af }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="site-title">☕Power of Coffee</a>
+                </div>
+                <nav class="nav-desktop">
+                    <a href="index.html">Inicio</a>
+                    <a href="menu.html">Menú</a>
+                    <a href="pedidos.html">Pedidos</a>
+                    <a href="promociones.html">Promociones</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <button class="menu-button" id="menuBtn">☰</button>
+            </div>
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="index.html">Inicio</a>
+                <a href="menu.html">Menú</a>
+                <a href="pedidos.html">Pedidos</a>
+                <a href="promociones.html">Promociones</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">Visítanos o contáctanos</p>
+            <div class="contacto-grid">
+                <div class="contacto-item">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📍</div>
+                    <h3>Ubicación</h3>
+                    <p>Av. 11 de Noviembre y Miltón Reyes<br>Ciudad, Riobamba<br>CP 12345</p>
+                </div>
+                <div class="contacto-item">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
+                    <h3>Teléfono</h3>
+                    <p>+593 (555) 123-4567<br>WhatsApp: +593 98451328</p>
+                </div>
+                <div class="contacto-item">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">⏰</div>
+                    <h3>Horarios</h3><p>Lun-Vie: 7:00 AM - 10:00 PM<br>Sáb-Dom: 8:00 AM - 11:00 PM</p>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:2rem;">
+                <a href="index.html" class="btn-secondary">Volver al inicio</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div style="font-weight: bold; margin-bottom: 1rem;">☕ Power of Coffee</div>
+                    <p>Potenciando tu día con el mejor café artesanal desde 2020.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="promociones.html">Promociones</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section"> <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="pedidos.html">Pedidos Online</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Reservas</a></li>
+                        <li><a href="#">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="footer-socials">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Power of Coffee. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        menuBtn && menuBtn.addEventListener('click', () => mobileNav.classList.toggle('active'));
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                target && target.scrollIntoView({ behavior: 'smooth' });
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

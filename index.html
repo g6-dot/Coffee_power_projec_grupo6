@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Power of Coffee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a href="index.html" class="site-title">☕ Power of Coffee</a>
+      </div>
+
+      <nav class="nav-desktop">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="promociones.html">Promociones</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <button class="menu-button" id="menuBtn">☰</button>
+    </div>
+
+    <nav class="nav-mobile" id="mobileNav">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menú</a>
+      <a href="pedidos.html">Pedidos</a>
+      <a href="promociones.html">Promociones</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content hero-centered">
+
+        <!-- LOGO CENTRAL -->
+        <h1 class="logo-text">
+          <span class="logo-emoji">☕</span>
+          <span class="logo-name">Power of Coffee</span>
+        </h1>
+
+        <p class="hero-description">
+          Despierta tu energía con el mejor café artesanal.
+          Cada taza es una experiencia única que potencia tu vida.
+        </p>
+
+        <div class="button-group">
+          <a href="menu.html" class="btn-primary">Ver Menú</a>
+          <a href="pedidos.html" class="btn-secondary">Hacer Pedido</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <strong>☕ Power of Coffee</strong>
+        <p>Potenciando tu día con el mejor café artesanal.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="pedidos.html">Pedidos Online</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Reservas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Síguenos</h4>
+        <a href="#">Facebook</a><br>
+        <a href="#">Instagram</a><br>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Power of Coffee</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

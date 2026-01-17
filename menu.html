@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Power of Coffee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="site-title">☕Power of Coffee</a>
+                </div>
+                <nav class="nav-desktop">
+                    <a href="index.html">Inicio</a>
+                    <a href="menu.html">Menú</a>
+                    <a href="pedidos.html">Pedidos</a>
+                    <a href="promociones.html">Promociones</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+                <button class="menu-button" id="menuBtn">☰</button>
+            </div>
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="index.html">Inicio</a>
+                <a href="menu.html">Menú</a>
+                <a href="pedidos.html">Pedidos</a>
+                <a href="promociones.html">Promociones</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="menu">
+        <div class="container">
+                        <h2 class="section-title">Nuestro Menú</h2>
+                        <p class="section-subtitle">Elige una categoría para ver los productos</p>
+
+                        <div class="menu-categories" style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-bottom:2.5rem;">
+                            <button class="btn-primary menu-cat-btn" data-cat="bebidas">Bebidas</button>
+                            <button class="btn-secondary menu-cat-btn" data-cat="panaderia">Panadería y Repostería</button>
+                            <button class="btn-secondary menu-cat-btn" data-cat="saladas">Opciones Saladas</button>
+                            <button class="btn-secondary menu-cat-btn" data-cat="ligeras">Opciones Ligeras</button>
+                        </div>
+
+                        <div id="cat-bebidas" class="menu-section menu-cat-section">
+                            <h3 style="color:#78350f; font-size:1.5rem; margin-top:2rem;">☕ Bebidas Calientes y Frías</h3>
+                            <div class="menu-product-grid">
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Café negro <span class="menu-product-price">$2.00</span></span>
+                                      <img src="Imagenes Cafeteria_Menu/Cafe-negro.jpg" alt="Café negro" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Café con leche <span class="menu-product-price">$2.50</span></span>
+                                      <img src="Imagenes Cafeteria_Menu/Cafe con leche.jpg" alt="Café con leche" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Cappuccino <span class="menu-product-price">$2.80</span></span>
+                                      <img src="Imagenes Cafeteria_Menu/Capuccino.jpg" alt="Cappuccino" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Latte frío o caliente <span class="menu-product-price">$2.80</span></span>
+                                      <img src="Imagenes Cafeteria_Menu/Latte.jpg" alt="Latte" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Moca <span class="menu-product-price">$3.00</span></span>
+                                      <img src="Imagenes Cafeteria_Menu/Moca.jpg" alt="Moca" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Espresso <span class="menu-product-price">$2.20</span></span>
+                                      <img src="Imagenes Cafeteria_Menu/Espreso.jpg" alt="Espresso" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Chocolate caliente <span class="menu-product-price">$2.50</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/chocolate-caliente.jpg" alt="Chocolate caliente" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Té (manzanilla, hierbaluisa, té negro, té verde) <span class="menu-product-price">$2.00</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Te.jpg" alt="Té" class="menu-product-img">
+                                </div>
+                
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Café frío (iced coffee) <span class="menu-product-price">$2.80</span></span>
+                                      <img src="Imagenes Cafeteria_Menu/Ice coffe.jpg" alt="Café frío" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Frappé de café <span class="menu-product-price">$3.20</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Frape de cafe.jpg" alt="Frappé de café" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Frappé de chocolate <span class="menu-product-price">$3.20</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Frape de chocolate.jpg" alt="Frappé de chocolate" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Batidos de frutas (fresa, banana, mango) <span class="menu-product-price">$2.80</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Batidos de frutas.jpg" alt="Batidos de frutas" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Jugos naturales <span class="menu-product-price">$2.50</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Jugos naturales.jpg" alt="Jugos naturales" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Agua mineral <span class="menu-product-price">$1.50</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Agua mineral.jpg" alt="Agua mineral" class="menu-product-img">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="cat-panaderia" class="menu-section menu-cat-section" style="display:none;">
+                            <h3 style="color:#78350f; font-size:1.5rem; margin-top:2rem;">🥐 Panadería y Repostería🍰</h3>
+                            <div class="menu-product-grid">
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Croissant (simple o relleno) <span class="menu-product-price">$2.00</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Croissant (simple o relleno).jpg" alt="Croissant" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Pan de chocolate <span class="menu-product-price">$2.20</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Pan de chocolate.jpg" alt="Pan de chocolate" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Muffin (vainilla, chocolate) <span class="menu-product-price">$2.00</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Muffin.jpg" alt="Muffin" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Donas <span class="menu-product-price">$1.80</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Donas.jpg" alt="Donas" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Galletas artesanales <span class="menu-product-price">$1.50</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Galletas artesanales.jpg" alt="Galletas artesanales" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Brownies <span class="menu-product-price">$2.20</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Brownies.jpg" alt="Brownies" class="menu-product-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="cat-saladas" class="menu-section menu-cat-section" style="display:none;">
+                            <h3 style="color:#78350f; font-size:1.5rem; margin-top:2rem;">🍞 Opciones Saladas</h3>
+                            <div class="menu-product-grid">
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Sándwich de jamón y queso <span class="menu-product-price">$3.00</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Sándwich de jamón y queso.jpg" alt="Sándwich de jamón y queso" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Sándwich de pollo <span class="menu-product-price">$3.20</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Sándwich de pollo.jpg" alt="Sándwich de pollo" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Empanadas (queso, pollo, carne) <span class="menu-product-price">$1.80</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Empanadas (queso, pollo, carne).jpg" alt="Empanadas" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Enrollados de jamón y queso <span class="menu-product-price">$2.50</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Enrollados de jamón y queso.jpg" alt="Enrollados de jamón y queso" class="menu-product-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="cat-ligeras" class="menu-section menu-cat-section" style="display:none;">
+                            <h3 style="color:#78350f; font-size:1.5rem; margin-top:2rem;">🥗 Opciones Ligeras</h3>
+                            <div class="menu-product-grid">
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Ensalada de frutas <span class="menu-product-price">$2.50</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Ensalada de frutas.jpg" alt="Ensalada de frutas" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Yogurt con granola <span class="menu-product-price">$2.20</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Yogurt con granola.jpg" alt="Yogurt con granola" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Tostadas integrales con mermelada <span class="menu-product-price">$1.80</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Tostadas con aguacate.jpg" alt="Tostadas integrales con mermelada" class="menu-product-img">
+                                </div>
+                                <div class="menu-product">
+                                    <span class="menu-product-name">Tostadas con aguacate <span class="menu-product-price">$2.00</span></span>
+                                    <img src="Imagenes Cafeteria_Menu/Tostadas con aguacate.jpg" alt="Tostadas con aguacate" class="menu-product-img">
+                                </div>
+                            </div>
+                        </div>
+
+            <div style="text-align:center; margin-top:2rem;">
+                <a href="index.html" class="btn-primary">Volver al inicio</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div style="font-weight: bold; margin-bottom: 1rem;">☕ Power of Coffee</div>
+                    <p>Potenciando tu día con el mejor café artesanal desde 2020.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="promociones.html">Promociones</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section"> <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="pedidos.html">Pedidos Online</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Reservas</a></li>
+                        <li><a href="#">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="footer-socials">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Power of Coffee. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        menuBtn && menuBtn.addEventListener('click', () => mobileNav.classList.toggle('active'));
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                target && target.scrollIntoView({ behavior: 'smooth' });
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Menú por categorías
+        const catBtns = document.querySelectorAll('.menu-cat-btn');
+        const catSections = document.querySelectorAll('.menu-cat-section');
+        catBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            catSections.forEach(sec => sec.style.display = 'none');
+            document.getElementById('cat-' + btn.dataset.cat).style.display = '';
+            catBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          });
+        });
+        // Mostrar bebidas por defecto
+        document.getElementById('cat-bebidas').style.display = '';
+        catBtns[0].classList.add('active');
+        </script>
+</body>
+</html>

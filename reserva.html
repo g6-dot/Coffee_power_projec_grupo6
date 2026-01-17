@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservar Mesa - Power of Coffee</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-card { background: white; padding: 2rem; border-radius: 0.5rem; max-width: 720px; margin: 2rem auto; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    label { display:block; margin-bottom:0.5rem; color:#78350f; font-weight:600 }
+    input, select { width:100%; padding:0.5rem; border:1px solid #e6b063; border-radius:0.375rem }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo"><a href="index.html" class="site-title">☕Power of Coffee</a></div>
+        <nav class="nav-desktop">
+          <a href="index.html">Inicio</a>
+          <a href="menu.html">Menú</a>
+          <a href="pedidos.html">Pedidos</a>
+          <a href="promociones.html">Promociones</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+        <button class="menu-button" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="form-card">
+          <h2>Reservar Mesa</h2>
+          <p>Selecciona fecha, hora y mesa disponible.</p>
+
+          <form id="reservaForm">
+            <div style="margin-bottom:1rem;">
+              <label>Nombre</label>
+              <input type="text" id="r-name" required>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label>Teléfono</label>
+              <input type="tel" id="r-phone" required>
+            </div>
+            <div style="display:flex; gap:1rem; margin-bottom:1rem; flex-wrap:wrap;">
+              <div style="flex:1 1 200px;">
+                <label>Fecha</label>
+                <input type="date" id="r-date" required>
+              </div>
+              <div style="flex:1 1 200px;">
+                <label>Hora</label>
+                <input type="time" id="r-time" required>
+              </div>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label>Nº de invitados</label>
+              <select id="r-guests">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+              <label>Mesas disponibles</label>
+              <select id="tableSelect">
+                <option value="1">Mesa 1 (2 pax)</option>
+                <option value="2">Mesa 2 (2 pax)</option>
+                <option value="3">Mesa 3 (4 pax)</option>
+                <option value="4">Mesa 4 (4 pax)</option>
+                <option value="5">Mesa 5 (6 pax)</option>
+                <option value="6">Mesa 6 (6 pax)</option>
+              </select>
+            </div>
+
+            <div style="margin-top:1rem; display:flex; gap:1rem;">
+              <button type="submit" class="btn-primary">Confirmar Reserva</button>
+              <a href="pedidos.html" class="btn-secondary">Volver</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const reservaForm = document.getElementById('reservaForm');
+    reservaForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('r-name').value.trim();
+      const phone = document.getElementById('r-phone').value.trim();
+      const date = document.getElementById('r-date').value;
+      const time = document.getElementById('r-time').value;
+      if (!name || !phone || !date || !time) { alert('Completa los campos obligatorios.'); return; }
+      // Aquí se podría consultar disponibilidad real; por ahora confirmamos la reserva simulada
+      alert('Reserva solicitada para ' + date + ' a las ' + time + '. Nos pondremos en contacto.');
+      reservaForm.reset();
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn && menuBtn.addEventListener('click', () => mobileNav && mobileNav.classList.toggle('active'));
+  </script>
+</body>
+</html>

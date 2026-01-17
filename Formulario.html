@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordenar - Power of Coffee</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-color: #faf9f7; }
+    .form-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 0.75rem;
+      max-width: 700px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .form-card h2 { color: #78350f; margin-bottom: 1.5rem; text-align: center; }
+    .form-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .form-row .field { flex: 1 1 280px; }
+    label { display: block; margin-bottom: 0.5rem; color: #78350f; font-weight: 600; font-size: 0.95rem; }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e6b063;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus { outline: none; border-color: #d97706; }
+    
+    .modalidad-row { margin-bottom: 1.5rem; }
+    .modalidad-row > label { margin-bottom: 0.8rem; display: block; }
+    .modalidad-opciones {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .modalidad-opciones label {
+      margin: 0;
+      font-weight: 500;
+      color: #78350f;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .modalidad-opciones input[type="radio"] { width: auto; margin: 0; }
+
+    .menu-pedido-block { 
+      background-color: #fffbf0;
+      padding: 1.5rem;
+      border: 2px solid #f3d5a5;
+      border-radius: 0.75rem;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .menu-pedido-block > label { display: block; margin-bottom: 1rem; }
+    
+    .menu-categorias-pedido {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .cat-pedido-btn {
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-primary { background-color: #d97706; color: white; }
+    .btn-primary:hover { background-color: #b45309; }
+    .btn-secondary { background-color: #e6b063; color: white; }
+    .btn-secondary:hover { background-color: #d4a04f; }
+
+    #pedidoSeleccionadoBox {
+      background: linear-gradient(135deg, #fff8f1, #fffbf0);
+      border: 2px solid #f1c87b;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+    #pedidoSeleccionadoBox strong { color: #78350f; display: block; margin-bottom: 0.5rem; }
+    #pedidoSeleccionadoContenido { color: #78350f; line-height: 1.6; font-size: 0.95rem; }
+
+    .menu-productos-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .menu-productos-list > div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem;
+      background-color: #faf9f7;
+      border-radius: 0.4rem;
+      border-left: 4px solid #d97706;
+    }
+    .menu-productos-list input[type="number"] {
+      width: 4rem;
+      padding: 0.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+    .menu-productos-list span:nth-child(2) {
+      flex: 1;
+      color: #78350f;
+      font-weight: 500;
+    }
+    .menu-productos-list span:nth-child(3) {
+      color: #b45309;
+      font-weight: 700;
+      min-width: 70px;
+      text-align: right;
+    }
+
+    .pedido-resumen { 
+      background-color: #fff8f1;
+      padding: 0.75rem;
+      border-radius: 0.4rem;
+      font-size: 0.95rem;
+      color: #78350f;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+    .pedido-total {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #b45309;
+      margin-top: 0.75rem;
+      text-align: right;
+    }
+
+    .form-actions {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .form-actions button,
+    .form-actions a {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.85rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-submit { background-color: #d97706; color: white; }
+    .btn-submit:hover { background-color: #b45309; }
+    .btn-back { background-color: #e6b063; color: white; }
+    .btn-back:hover { background-color: #d4a04f; }
+
+    @media (max-width: 600px) {
+      .form-card { padding: 1.5rem; }
+      .form-row { gap: 1rem; }
+      .form-row .field { flex: 1 1 100%; }
+      .menu-categorias-pedido { gap: 0.5rem; }
+      .cat-pedido-btn { flex: 1; }
+      .modalidad-opciones { gap: 1.5rem; }
+      .form-actions { flex-direction: column; }
+      .form-actions button, .form-actions a { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo"><a href="index.html" class="site-title">☕Power of Coffee</a></div>
+        <nav class="nav-desktop">
+          <a href="index.html">Inicio</a>
+          <a href="menu.html">Menú</a>
+          <a href="pedidos.html">Pedidos</a>
+          <a href="promociones.html">Promociones</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+        <button class="menu-button" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="form-card">
+          <h2>📝 Hacer Pedido</h2>
+          
+          <form id="orderForm">
+            <!-- Datos del cliente -->
+            <div class="form-row">
+              <div class="field">
+                <label>Nombre</label>
+                <input type="text" id="name" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="field">
+                <label>Teléfono</label>
+                <input type="tel" id="phone" placeholder="Tu número de teléfono" required>
+              </div>
+            </div>
+
+            <!-- Modalidad de entrega -->
+            <div class="modalidad-row">
+              <label>Modalidad de entrega</label>
+              <div class="modalidad-opciones">
+                <label><input type="radio" name="mode" value="delivery" checked> 🚗 Delivery</label>
+                <label><input type="radio" name="mode" value="recoger"> 🏪 Recoger en local</label>
+              </div>
+            </div>
+
+            <!-- Dirección (solo para delivery) -->
+            <div id="addressFields" class="field">
+              <label>Dirección de entrega</label>
+              <input type="text" id="address" placeholder="Calle, número, piso, referencia..." required>
+            </div>
+
+            <!-- Selección de productos -->
+            <div class="menu-pedido-block">
+              <label>📦 Selecciona tus productos</label>
+              
+              <div class="menu-categorias-pedido">
+                <button type="button" class="btn-primary cat-pedido-btn" data-cat="bebidas">Bebidas</button>
+                <button type="button" class="btn-secondary cat-pedido-btn" data-cat="saladas">Saladas</button>
+                <button type="button" class="btn-secondary cat-pedido-btn" data-cat="panaderia">Panadería</button>
+                <button type="button" class="btn-secondary cat-pedido-btn" data-cat="ligeras">Ligeras</button>
+              </div>
+
+              <!-- Resumen visible del pedido actual -->
+              <div id="pedidoSeleccionadoBox">
+                <strong>✓ Pedido actual:</strong>
+                <div id="pedidoSeleccionadoContenido"></div>
+              </div>
+
+              <!-- Lista de productos dinámicos -->
+              <div id="menuProductos" class="menu-productos-list"></div>
+
+              <!-- Resumen de pedido y total -->
+              <div id="pedidoResumen" class="pedido-resumen"></div>
+              <div id="pedidoTotal" class="pedido-total"></div>
+            </div>
+
+            <!-- Método de pago -->
+            <div class="field" style="margin-bottom: 1.5rem;">
+              <label>💳 Método de pago</label>
+              <select id="payment" required>
+                <option value="">-- Selecciona un método --</option>
+                <option>Pago en local (efectivo)</option>
+                <option>Tarjeta / POS</option>
+                <option>Transferencia bancaria</option>
+              </select>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="form-actions">
+              <button type="submit" class="btn-submit">✓ Enviar Pedido</button>
+              <a href="pedidos.html" class="btn-back">← Volver</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
